@@ -1,0 +1,28 @@
+{
+  "name": "aanchal-stories",
+  "description": "Stories from Aanchal Women's Aid",
+  "version": "0.0.0",
+  "author": "TABLEFLIP",
+  "license": "AGPL-3.0",
+  "private": true,
+  "dependencies": {
+    "gatsby": "^1.9.99",
+    "gatsby-link": "^1.6.24",
+    "gatsby-plugin-react-helmet": "^1.0.8"
+  },
+  "main": "n/a",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "test": "standard"
+  },
+  "devDependencies": {
+    "standard": "^10.0.3"
+  },
+  "standard": {
+    "ignore": [
+      "public/**",
+      "dist/**"
+    ]
+  }
+}
