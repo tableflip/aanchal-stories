@@ -8,7 +8,9 @@
   "dependencies": {
     "gatsby": "^1.9.99",
     "gatsby-link": "^1.6.24",
-    "gatsby-plugin-react-helmet": "^1.0.8"
+    "gatsby-plugin-react-helmet": "^1.0.8",
+    "gatsby-source-filesystem": "^1.5.7",
+    "gatsby-transformer-json": "^1.0.11"
   },
   "main": "n/a",
   "scripts": {
@@ -18,5 +20,10 @@
   },
   "devDependencies": {
     "standard": "^10.0.3"
+  },
+  "standard": {
+    "globals": [
+      "graphql"
+    ]
   }
 }

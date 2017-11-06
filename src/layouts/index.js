@@ -34,13 +34,13 @@ const Header = () => (
   </div>
 )
 
-const TemplateWrapper = ({ children }) => (
+const TemplateWrapper = ({ data, children }) => (
   <div>
     <Helmet
-      title='Gatsby Default Starter'
+      title={data.allAanchalStoriesJson.edges[0].node.title}
       meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' }
+        { name: 'description', content: data.allAanchalStoriesJson.edges[0].node.description },
+        { name: 'keywords', content: data.allAanchalStoriesJson.edges[0].node.keywords }
       ]}
     />
     <Header />
@@ -62,3 +62,17 @@ TemplateWrapper.propTypes = {
 }
 
 export default TemplateWrapper
+
+export const query = graphql`
+  query LayoutQuery {
+    allAanchalStoriesJson {
+      edges {
+        node {
+          title
+          description
+          keywords
+        }
+      }
+    }
+  }
+`
