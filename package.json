@@ -9,8 +9,7 @@
     "gatsby": "^1.9.99",
     "gatsby-link": "^1.6.24",
     "gatsby-plugin-react-helmet": "^1.0.8",
-    "gatsby-source-filesystem": "^1.5.7",
-    "gatsby-transformer-json": "^1.0.11",
+    "gatsby-source-tune": "^1.0.0",
     "tachyons": "^4.9.0"
   },
   "main": "n/a",
