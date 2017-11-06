@@ -3,35 +3,25 @@ import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 
-import './index.css'
+import 'tachyons'
+import logoSrc from './logo.png'
+
+const Infobar = () => (
+  <div className='pv3 tc' style={{background: '#ffda31'}}>
+    <span className=''>
+      <span className='mr4'>Call us any time</span>
+      <img style={{verticalAlign: '-2px'}} src='https://icon.now.sh/phone' />
+      <span> 0845 451 2547 </span>
+    </span>
+  </div>
+)
 
 const Header = () => (
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem'
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem'
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to='/'
-          style={{
-            color: 'white',
-            textDecoration: 'none'
-          }}
-        >
-          Gatsby
-        </Link>
-      </h1>
-    </div>
-  </div>
+  <header className='db bg-white pa4 mw8 center tc tl-ns' >
+    <Link to='/' style={{textDecoration: 'none', display: 'inline-block'}}>
+      <img src={logoSrc} alt={'Aanchal Woman\'s Aid'} style={{width: 196, height: 54}} />
+    </Link>
+  </header>
 )
 
 const TemplateWrapper = ({ data, children }) => (
@@ -43,16 +33,12 @@ const TemplateWrapper = ({ data, children }) => (
         { name: 'keywords', content: data.allAanchalStoriesJson.edges[0].node.keywords }
       ]}
     />
-    <Header />
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0
-      }}
-    >
+    <div className='sans-serif'>
+      <Header />
       {children()}
+      <footer className='fixed bottom-0 left-0 right-0'>
+        <Infobar />
+      </footer>
     </div>
   </div>
 )
