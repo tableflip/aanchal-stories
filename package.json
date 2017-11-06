@@ -18,11 +18,5 @@
   },
   "devDependencies": {
     "standard": "^10.0.3"
-  },
-  "standard": {
-    "ignore": [
-      "public/**",
-      "dist/**"
-    ]
   }
 }
