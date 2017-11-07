@@ -44,30 +44,15 @@ const IndexPage = ({ data }) => (
     </p>
 
     <nav className='db w-100 center mw8 tc'>
-      <div className='db dib-ns w-50-m w-25-l ph3 v-top'>
-        <StoryCard title='Survior Story' name='Laximi' url='story-1' intro='Laximi talks about calling Aanchal and what happend next' photoSrc='http://aanchal.matsondigital.com/wp-content/uploads/2015/11/slider_image02.jpg' />
-      </div>
-      <div className='db dib-ns w-50-m w-25-l ph3 v-top'>
-        <StoryCard title='Survior Story' name='Sudarshan' url='./' intro='Survivor story: how fear for her kids safety gave her courage' photoSrc='http://aanchal.matsondigital.com/wp-content/uploads/2015/11/slider_image01.jpg' />
-      </div>
-      <div className='db dib-ns w-50-m w-25-l ph3 v-top'>
-        <StoryCard title='Survior Story' name='Neena' url='./' intro='Hear Neena speak out about her arranged marriage' photoSrc='http://aanchal.matsondigital.com/wp-content/uploads/2015/11/slider_image03.jpg' />
-      </div>
-      <div className='db dib-ns w-50-m w-25-l ph3 v-top'>
-        <StoryCard title='Survior Story' name='Jane' url='./' intro='Survivor from London talks about rebuilding hope' photoSrc='http://aanchal.matsondigital.com/wp-content/uploads/2015/12/shutterstock_83743855.jpg' />
-      </div>
-    </nav>
-
-    <ul>
       {data.stories.edges.map((edge) => {
-        const { id, name, page } = edge.node
+        const { id, name, page, intro, photoSrc } = edge.node
         return (
-          <li key={id}>
-            <Link to={`/${page}`}>{name}</Link>
-          </li>
+          <div key={id} className='db dib-ns w-50-m w-25-l ph3 v-top'>
+            <StoryCard title='Survior Story' name={name} url={page} intro={intro} photoSrc={photoSrc} />
+          </div>
         )
       })}
-    </ul>
+    </nav>
   </div>
 )
 
@@ -84,6 +69,8 @@ export const query = graphql`
           id
           page
           name
+          intro
+          photoSrc
         }
       }
     }
