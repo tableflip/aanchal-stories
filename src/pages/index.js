@@ -18,14 +18,14 @@ const IndexPage = ({ data }) => (
       <strong>If you're not sure</strong>, please take one minute to listen to another women's story.
     </p>
 
-  <div className="pa4 tc">
-    <blockquote className="tl athelas ml0 mt0 pl4 black-90 bl bw2 b--purple dib center">
-      <p className="tl f5 f4-m f3-l lh-copy mt0 measure">
-        I could heal the cuts and hide the bruises, but it was his words that really hurt me. His words stayed in my head, tormenting me, long after he has gone.
-      </p>
-      <cite className="tl f6 ttu tracked fs-normal">―AWA survivor</cite>
-    </blockquote>
-  </div>
+    <div className="pa4 tc">
+      <blockquote className="tl athelas ml0 mt0 pl4 black-90 bl bw2 b--purple dib center">
+        <p className="tl f5 f4-m f3-l lh-copy mt0 measure">
+          I could heal the cuts and hide the bruises, but it was his words that really hurt me. His words stayed in my head, tormenting me, long after he has gone.
+        </p>
+        <cite className="tl f6 ttu tracked fs-normal">―AWA survivor</cite>
+      </blockquote>
+    </div>
   </div>
 )
 
@@ -33,12 +33,8 @@ export default IndexPage
 
 export const query = graphql`
   query IndexQuery {
-    allHomeJson {
-      edges {
-        node {
-          foo
-        }
-      }
+    homeContent {
+      foo
     }
   }
 `

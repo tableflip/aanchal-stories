@@ -40,10 +40,10 @@ const Header = () => (
 const TemplateWrapper = ({ data, children }) => (
   <div>
     <Helmet
-      title={data.allAanchalStoriesJson.edges[0].node.title}
+      title={data.facts.title}
       meta={[
-        { name: 'description', content: data.allAanchalStoriesJson.edges[0].node.description },
-        { name: 'keywords', content: data.allAanchalStoriesJson.edges[0].node.keywords }
+        { name: 'description', content: data.facts.description },
+        { name: 'keywords', content: data.facts.keywords }
       ]}
     />
     <div className='sans-serif'>
@@ -64,14 +64,10 @@ export default TemplateWrapper
 
 export const query = graphql`
   query LayoutQuery {
-    allAanchalStoriesJson {
-      edges {
-        node {
-          title
-          description
-          keywords
-        }
-      }
+    facts {
+      title
+      description
+      keywords
     }
   }
 `
