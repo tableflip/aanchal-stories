@@ -3,35 +3,38 @@ import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 
-import './index.css'
+import 'tachyons'
+import logoSrc from './logo.png'
 
-const Header = () => (
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem'
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem'
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to='/'
-          style={{
-            color: 'white',
-            textDecoration: 'none'
-          }}
-        >
-          Gatsby
-        </Link>
-      </h1>
+const HelplineBox = () => (
+  <div className='pa2 dib tl purple b-purple' style={{border: '4px solid'}}>
+    <img src='https://icon.now.sh/phone_iphone/5e2ca5' className='dib v-mid' style={{height: 42, width: 42}} />
+    <div className='dib v-mid f4 fw7'>
+      <div className='tracked'>HELPLINE</div>
+      <div>0845 451 2547</div>
     </div>
   </div>
+)
+
+const Infobar = () => (
+  <div className='pv3 tc bg-yellow'>
+    <span className=''>
+      <span className='mr4'>Call us any time</span>
+      <img style={{verticalAlign: '-2px'}} src='https://icon.now.sh/phone' />
+      <span> 0845 451 2547 </span>
+    </span>
+  </div>
+)
+
+const Header = () => (
+  <header className='db dt-ns w-100 bg-white pa4 mw8 center tc tl-ns' >
+    <Link to='/' className='db dtc-ns no-underline' >
+      <img src={logoSrc} alt={'Aanchal Woman\'s Aid'} style={{height: 70}} />
+    </Link>
+    <div className='db dtc-ns v-top tc tr-ns mt4 mt0-ns'>
+      <HelplineBox />
+    </div>
+  </header>
 )
 
 const TemplateWrapper = ({ data, children }) => (
@@ -43,16 +46,12 @@ const TemplateWrapper = ({ data, children }) => (
         { name: 'keywords', content: data.allAanchalStoriesJson.edges[0].node.keywords }
       ]}
     />
-    <Header />
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0
-      }}
-    >
+    <div className='sans-serif'>
+      <Header />
       {children()}
+      <footer className='fixed bottom-0 left-0 right-0'>
+        <Infobar />
+      </footer>
     </div>
   </div>
 )

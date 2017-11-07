@@ -10,7 +10,8 @@
     "gatsby-link": "^1.6.24",
     "gatsby-plugin-react-helmet": "^1.0.8",
     "gatsby-source-filesystem": "^1.5.7",
-    "gatsby-transformer-json": "^1.0.11"
+    "gatsby-transformer-json": "^1.0.11",
+    "tachyons": "^4.9.0"
   },
   "main": "n/a",
   "scripts": {
@@ -21,6 +22,11 @@
   "devDependencies": {
     "standard": "^10.0.3"
   },
+  "browserslist": [
+    "> 0.1%",
+    "IE >= 9",
+    "last 4 versions"
+  ],
   "standard": {
     "globals": [
       "graphql"
