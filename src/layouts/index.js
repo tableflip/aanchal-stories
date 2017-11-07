@@ -4,7 +4,8 @@ import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 
 import 'tachyons'
-import logoSrc from './logo.png'
+import './index.css'
+import logoSrc from './logo-transparent.png'
 
 const HelplineBox = () => (
   <div className='pa2 dib tl purple b-purple' style={{border: '4px solid'}}>
@@ -27,11 +28,11 @@ const Infobar = () => (
 )
 
 const Header = () => (
-  <header className='db dt-ns w-100 bg-white pa4 mw8 center tc tl-ns' >
-    <Link to='/' className='db dtc-ns no-underline' >
-      <img src={logoSrc} alt={'Aanchal Woman\'s Aid'} style={{height: 70}} />
+  <header className='db dt-ns w-100 ph2 pv4 mw8 center tc tl-ns' >
+    <Link to='/' className='db dtc-ns no-underline v-mid'>
+      <img src={logoSrc} alt={'Aanchal Woman\'s Aid'} style={{maxHeight: 64}} />
     </Link>
-    <div className='db dtc-ns v-top tc tr-ns mt4 mt0-ns'>
+    <div className='db dtc-ns v-mid tc tr-ns mt4 mt0-ns'>
       <HelplineBox />
     </div>
   </header>
@@ -49,7 +50,7 @@ const TemplateWrapper = ({ data, children }) => (
     <div className='sans-serif'>
       <Header />
       {children()}
-      <footer className='fixed bottom-0 left-0 right-0'>
+      <footer className='pt4'>
         <Infobar />
       </footer>
     </div>
