@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import Helmet from 'react-helmet'
 
 const StoryCard = ({url, name, photoSrc, intro}) => (
   <Link to={url} className='dib tl no-underline bg-white center mw6 ba b--black-10 mv3' title={`Listen to ${name}`}>
@@ -15,7 +16,7 @@ const StoryCard = ({url, name, photoSrc, intro}) => (
 
 const IndexPage = ({ data }) => (
   <div className='tl pb6'>
-
+    <Helmet title={data.home.pageTitle} />
     <p className='ph3 f4 f3-ns lh-copy center' style={{maxWidth: '560px'}}>
       We <strong>support women</strong> affected by abuse.
       We never turn away a woman in need. We're on your side.
@@ -43,18 +44,14 @@ const IndexPage = ({ data }) => (
     </p>
 
     <nav className='db w-100 center mw8 tc'>
-      <div className='db dib-ns w-50-m w-25-l ph3 v-top'>
-        <StoryCard title='Survior Story' name='Laximi' url='story-1' intro='Laximi talks about calling Aanchal and what happend next' photoSrc='http://aanchal.matsondigital.com/wp-content/uploads/2015/11/slider_image02.jpg' />
-      </div>
-      <div className='db dib-ns w-50-m w-25-l ph3 v-top'>
-        <StoryCard title='Survior Story' name='Sudarshan' url='./' intro='Survivor story: how fear for her kids safety gave her courage' photoSrc='http://aanchal.matsondigital.com/wp-content/uploads/2015/11/slider_image01.jpg' />
-      </div>
-      <div className='db dib-ns w-50-m w-25-l ph3 v-top'>
-        <StoryCard title='Survior Story' name='Neena' url='./' intro='Hear Neena speak out about her arranged marriage' photoSrc='http://aanchal.matsondigital.com/wp-content/uploads/2015/11/slider_image03.jpg' />
-      </div>
-      <div className='db dib-ns w-50-m w-25-l ph3 v-top'>
-        <StoryCard title='Survior Story' name='Jane' url='./' intro='Survivor from London talks about rebuilding hope' photoSrc='http://aanchal.matsondigital.com/wp-content/uploads/2015/12/shutterstock_83743855.jpg' />
-      </div>
+      {data.stories.edges.map((edge) => {
+        const { id, name, page, intro, photoSrc } = edge.node
+        return (
+          <div key={id} className='db dib-ns w-50-m w-25-l ph3 v-top'>
+            <StoryCard title='Survior Story' name={name} url={page} intro={intro} photoSrc={photoSrc} />
+          </div>
+        )
+      })}
     </nav>
   </div>
 )
@@ -63,8 +60,19 @@ export default IndexPage
 
 export const query = graphql`
   query IndexQuery {
-    homeContent {
-      foo
+    home: content(page: { eq: "home" }) {
+      pageTitle
+    }
+    stories: allContent(filter: {page: { regex: "/^story-.*/" }}) {
+      edges {
+        node {
+          id
+          page
+          name
+          intro
+          photoSrc
+        }
+      }
     }
   }
 `
