@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import Helmet from 'react-helmet'
 
 const StoryCard = ({url, name, photoSrc, intro}) => (
   <Link to={url} className='dib tl no-underline bg-white center mw6 ba b--black-10 mv3' title={`Listen to ${name}`}>
@@ -15,7 +16,7 @@ const StoryCard = ({url, name, photoSrc, intro}) => (
 
 const IndexPage = ({ data }) => (
   <div className='tl pb6'>
-
+    <Helmet title={data.home.pageTitle} />
     <p className='ph3 f4 f3-ns lh-copy center' style={{maxWidth: '560px'}}>
       We <strong>support women</strong> affected by abuse.
       We never turn away a woman in need. We're on your side.
@@ -56,6 +57,17 @@ const IndexPage = ({ data }) => (
         <StoryCard title='Survior Story' name='Jane' url='./' intro='Survivor from London talks about rebuilding hope' photoSrc='http://aanchal.matsondigital.com/wp-content/uploads/2015/12/shutterstock_83743855.jpg' />
       </div>
     </nav>
+
+    <ul>
+      {data.stories.edges.map((edge) => {
+        const { id, name, page } = edge.node
+        return (
+          <li key={id}>
+            <Link to={`/${page}`}>{name}</Link>
+          </li>
+        )
+      })}
+    </ul>
   </div>
 )
 
@@ -63,8 +75,17 @@ export default IndexPage
 
 export const query = graphql`
   query IndexQuery {
-    homeContent {
-      foo
+    home: content(page: { eq: "home" }) {
+      pageTitle
+    }
+    stories: allContent(filter: {page: { regex: "/^story-.*/" }}) {
+      edges {
+        node {
+          id
+          page
+          name
+        }
+      }
     }
   }
 `
