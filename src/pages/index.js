@@ -17,9 +17,29 @@ const StoryCard = ({url, name, photoSrc, intro}) => (
 const IndexPage = ({ data }) => (
   <div className='tl pb6'>
     <Helmet title={data.home.pageTitle} />
+
     <p className='ph3 f4 f3-ns lh-copy center' style={{maxWidth: '560px'}}>
       We <strong>support women</strong> affected by abuse.
       We never turn away a woman in need. We're on your side.
+    </p>
+
+    <nav className='db w-100 center mw8 tc'>
+      {data.stories.edges.map((edge) => {
+        const { id, name, page, intro, photoSrc } = edge.node
+        return (
+          <div key={id} className='db dib-ns w-50-m w-25-l ph3 v-top'>
+            <StoryCard title='Survior Story' name={name} url={page} intro={intro} photoSrc={photoSrc} />
+          </div>
+        )
+      })}
+    </nav>
+
+    <p className='ph3 f4 f4-ns lh-copy center' style={{maxWidth: '560px'}}>
+      Talking to us is <strong>free</strong> and <strong>confidential.</strong> We're a charity.
+    </p>
+
+    <p className='ph3 f5 f4-ns lh-copy center' style={{maxWidth: '560px'}}>
+      We speak Urdu, Bengali, Punjabi, English and many other languages. If you want help, <strong>call us</strong> on <a target='_blank' className='no-underline purple' href='tel:+8454512547'>0845 451 2547</a>.
     </p>
 
     <div className='pa3 pt4-ns pb3-ns tc'>
@@ -32,18 +52,10 @@ const IndexPage = ({ data }) => (
     </div>
 
     <p className='ph3 f4 f4-ns lh-copy center' style={{maxWidth: '560px'}}>
-      Talking to us is <strong>free</strong> and <strong>confidential.</strong> We're a charity.
-    </p>
-
-    <p className='ph3 f5 f4-ns lh-copy center' style={{maxWidth: '560px'}}>
-      We speak Urdu, Bengali, Punjabi, English and many other languages. If you want help, <strong>call us</strong> on <a target='_blank' className='no-underline purple' href='tel:+8454512547'>0845 451 2547</a>.
-    </p>
-
-    <p className='ph3 f4 f4-ns lh-copy center' style={{maxWidth: '560px'}}>
       <strong>If you're not sure</strong>, please take one minute to listen to another women's story.
     </p>
 
-    <nav className='db w-100 center mw8 tc'>
+    <nav className='db w-100 center mw8 tc pt2'>
       {data.stories.edges.map((edge) => {
         const { id, name, page, intro, photoSrc } = edge.node
         return (
