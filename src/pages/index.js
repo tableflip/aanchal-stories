@@ -8,7 +8,7 @@ const StoryCard = ({url, name, photoSrc, intro}) => (
     </div>
     <img src={photoSrc} className='w-100 db' alt={`Photo of ${name}`} />
     <div className='pa3'>
-      <a href='#' className='link dim lh-title black'>{intro}</a>
+      <span className='link dim lh-title black'>{intro}</span>
     </div>
   </Link>
 )
