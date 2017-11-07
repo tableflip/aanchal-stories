@@ -10,6 +10,7 @@
     "gatsby-link": "^1.6.24",
     "gatsby-plugin-react-helmet": "^1.0.8",
     "gatsby-source-tune": "^1.0.0",
+    "react-responsive-embed": "^2.1.0",
     "tachyons": "^4.9.0"
   },
   "main": "n/a",
