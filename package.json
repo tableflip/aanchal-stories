@@ -15,9 +15,10 @@
   },
   "main": "n/a",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "test": "standard"
+    "test": "standard",
+    "build": "gatsby build && ln -s public dist",
+    "watch": "gatsby develop",
+    "clean": "rm -rf public dist .cache"
   },
   "devDependencies": {
     "standard": "^10.0.3"

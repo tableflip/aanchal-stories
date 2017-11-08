@@ -4,14 +4,14 @@ Stories from Aanchal Women's Aid
 
 ## Usage
 
-```
+```sh
 npm install
 ```
 
 ###### Dev
 
 ```sh
-npm run develop
+npm run watch
 ```
 
 ###### Production
