@@ -3,37 +3,24 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import Header from '../components/header'
 
-import 'tachyons'
-import './index.css'
-
-const TemplateWrapper = ({ data, children }) => (
+const Layout = ({ facts, children }) => (
   <div>
-    <Helmet
-      title={data.facts.title}
-      meta={[
-        { name: 'description', content: data.facts.description },
-        { name: 'keywords', content: data.facts.keywords }
-      ]}
-    />
+    <Helmet>
+      <title>Yo!</title>
+      <meta name='description' content={facts.description} />
+      <meta name='keywords' content={facts.keywords} />
+
+    </Helmet>
     <div className='sans-serif'>
+      <link rel='stylesheet' href='./bundle.css' />
       <Header />
-      {children()}
+      {children}
     </div>
   </div>
 )
 
-TemplateWrapper.propTypes = {
-  children: PropTypes.func
+Layout.propTypes = {
+  children: PropTypes.node
 }
 
-export default TemplateWrapper
-
-export const query = graphql`
-  query LayoutQuery {
-    facts {
-      title
-      description
-      keywords
-    }
-  }
-`
+export default Layout
