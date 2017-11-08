@@ -1,3 +1,13 @@
 body {
   background: #fefbfb;
 }
+
+.aanchal-green {
+  color: #17A555;
+}
+.bg-aanchal-green {
+  background-color: #17A555;
+}
+.b-aanchal-green {
+  border-color: #17A555;
+}

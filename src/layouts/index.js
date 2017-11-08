@@ -17,16 +17,6 @@ const HelplineBox = () => (
   </div>
 )
 
-const Infobar = () => (
-  <div className='pv3 tc bg-yellow'>
-    <span className=''>
-      <span className='mr4'>Call us any time</span>
-      <img style={{verticalAlign: '-2px'}} src='https://icon.now.sh/phone' />
-      <span> 0845 451 2547 </span>
-    </span>
-  </div>
-)
-
 const Header = () => (
   <header className='db dt-ns w-100 ph2 pv4 mw8 center tc tl-ns' >
     <Link to='/' className='db dtc-ns no-underline v-mid'>
@@ -50,9 +40,6 @@ const TemplateWrapper = ({ data, children }) => (
     <div className='sans-serif'>
       <Header />
       {children()}
-      <footer className='pt4'>
-        <Infobar />
-      </footer>
     </div>
   </div>
 )
