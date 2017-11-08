@@ -1,0 +1,2 @@
+webpackJsonp([0x7f572893b594],{306:function(t,e){t.exports={data:{story:{name:"Sudarshan",videoSrc:"https://www.youtube.com/embed/OOdPLr4zyNU"}},pathContext:{page:"story-2",_PARENT:"SOURCE"}}}});
+//# sourceMappingURL=path---story-2-2d74eabe1d7a2f5dd3b9.js.map

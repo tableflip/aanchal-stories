@@ -1,0 +1,2 @@
+webpackJsonp([0x8028f998e32d],{307:function(e,t){e.exports={data:{story:{name:"Neena",videoSrc:"https://www.youtube.com/embed/OOdPLr4zyNU"}},pathContext:{page:"story-3",_PARENT:"SOURCE"}}}});
+//# sourceMappingURL=path---story-3-9da4638b4bf7a6612ca6.js.map
