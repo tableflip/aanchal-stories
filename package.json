@@ -16,7 +16,7 @@
   "main": "n/a",
   "scripts": {
     "test": "standard",
-    "build": "gatsby build && ln -s public dist",
+    "build": "gatsby build && ln -sf public dist",
     "watch": "gatsby develop",
     "clean": "rm -rf public dist .cache"
   },
