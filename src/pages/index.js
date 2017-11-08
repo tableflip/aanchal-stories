@@ -2,6 +2,16 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 
+const Footer = () => (
+  <footer className='db mt6 pv3 tc bg-yellow'>
+    <span className=''>
+      <span className='mr4'>Call us any time</span>
+      <img style={{verticalAlign: '-2px'}} src='https://icon.now.sh/phone' />
+      <span> 0845 451 2547 </span>
+    </span>
+  </footer>
+)
+
 const StoryCard = ({url, name, photoSrc, intro}) => (
   <Link to={url} className='dib tl no-underline bg-white center mw6 ba b--black-10 mv3' title={`Listen to ${name}`}>
     <div className='pv2 ph3'>
@@ -15,7 +25,7 @@ const StoryCard = ({url, name, photoSrc, intro}) => (
 )
 
 const IndexPage = ({ data }) => (
-  <div className='tl pb6'>
+  <div className='tl'>
     <Helmet title={data.home.pageTitle} />
 
     <p className='ph3 f4 f3-ns lh-copy center' style={{maxWidth: '560px'}}>
@@ -23,7 +33,7 @@ const IndexPage = ({ data }) => (
       We never turn away a woman in need. We're on your side.
     </p>
 
-    <nav className='db w-100 center mw8 tc'>
+    <nav className='dn db-l w-100 center mw8 tc'>
       {data.stories.edges.map((edge) => {
         const { id, name, page, intro, photoSrc } = edge.node
         return (
@@ -38,8 +48,19 @@ const IndexPage = ({ data }) => (
       Talking to us is <strong>free</strong> and <strong>confidential.</strong> We're a charity.
     </p>
 
+    <nav className='center mw7 tc'>
+      <a href='tel:+8454512547' className='bn f5 fw4 link br1 ph3 pv3 mv2 mh3 dib white bg-aanchal-green pointer'>
+        <img className='v-mid mr2' src='https://icon.now.sh/call/ffffff/22' alt='' />
+        Speak to someone now
+      </a>
+      <Link to='call-back' className='bn f5 fw4 link br1 ph3 pv3 mh3 mv2 dib white bg-aanchal-green pointer'>
+        <img className='v-mid mr2' src='https://icon.now.sh/ring_volume/ffffff/22' alt='' />
+        Request a call back later
+      </Link>
+    </nav>
+
     <p className='ph3 f5 f4-ns lh-copy center' style={{maxWidth: '560px'}}>
-      We speak Urdu, Bengali, Punjabi, English and many other languages. If you want help, <strong>call us</strong> on <a target='_blank' className='no-underline purple' href='tel:+8454512547'>0845 451 2547</a>.
+      We speak Urdu, Bengali, Punjabi, English and many other languages. If you want <strong>non-judgemental</strong> help, in your language, <strong>call us</strong>.
     </p>
 
     <div className='pa3 pt4-ns pb3-ns tc'>
@@ -65,6 +86,8 @@ const IndexPage = ({ data }) => (
         )
       })}
     </nav>
+
+    <Footer />
   </div>
 )
 
