@@ -32,5 +32,3 @@ npm run build
 
 
 [css-modules-vars]: https://github.com/css-modules/css-modules/blob/master/docs/values-variables.md
-
-TABS build me2
