@@ -33,7 +33,7 @@ const IndexPage = ({ data }) => (
       We never turn away a woman in need. We're on your side.
     </p>
 
-    <nav className='db w-100 center mw8 tc'>
+    <nav className='dn db-l w-100 center mw8 tc'>
       {data.stories.edges.map((edge) => {
         const { id, name, page, intro, photoSrc } = edge.node
         return (
@@ -60,7 +60,7 @@ const IndexPage = ({ data }) => (
     </nav>
 
     <p className='ph3 f5 f4-ns lh-copy center' style={{maxWidth: '560px'}}>
-      We speak Urdu, Bengali, Punjabi, English and many other languages. If you want help, <strong>call us</strong> on <a target='_blank' className='no-underline purple' href='tel:+8454512547'>0845 451 2547</a>.
+      We speak Urdu, Bengali, Punjabi, English and many other languages. If you want <strong>non-judgemental</strong> help, in your language, <strong>call us</strong>.
     </p>
 
     <div className='pa3 pt4-ns pb3-ns tc'>
