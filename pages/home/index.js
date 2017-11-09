@@ -1,5 +1,4 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 import Layout from '../layout'
 
 const Footer = () => (
@@ -40,8 +39,6 @@ const StoryNav = ({stories}) => (
 const IndexPage = ({ facts, content, stories }) => (
   <Layout facts={facts} content={content}>
     <div className='tl'>
-      <Helmet title={content.pageTitle} />
-
       <p className='ph3 f4 f3-ns lh-copy center' style={{maxWidth: '560px'}}>
         We <strong>support women</strong> affected by abuse.
         We never turn away a woman in need. We're on your side.
