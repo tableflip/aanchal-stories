@@ -28,9 +28,13 @@
     "build": "run-p build:*",
     "build:static": "rsync -a public/ dist",
     "build:html": "node build/data.js && static-react --props pages.json src/pages/index.js > dist/index.html",
-    "build:css": "postcss src/main.css -o dist/bundle.css",
-    "watch": "gatsby develop",
-    "clean": "rm -rf public dist .cache"
+    "build:css": "postcss pages/main.css -o dist/bundle.css",
+    "watch": "run-p watch:*",
+    "watch:static": "nodemon -w public -e 'gif,png,webm,jpg' -x npm run build:static",
+    "watch:html": "nodemon -w facts.json -w pages -e js,json,svg -x npm run build:html",
+    "watch:css": "npm run build:css -- --watch",
+    "watch:serve": "browser-sync start --files 'dist/bundle.*' --files 'dist/*.html' --server dist --port 4000",
+    "clean": "rm -rf dist .cache"
   },
   "devDependencies": {
     "standard": "^10.0.3"

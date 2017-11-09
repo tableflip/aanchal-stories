@@ -2,6 +2,8 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Layout from '../layouts'
 
+console.log('yes')
+
 const Footer = () => (
   <footer className='db mt6 pv3 tc bg-yellow'>
     <span className=''>
