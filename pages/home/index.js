@@ -1,8 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import Layout from '../layouts'
-
-console.log('yes')
+import Layout from '../layout'
 
 const Footer = () => (
   <footer className='db mt6 pv3 tc bg-yellow'>
@@ -26,8 +24,21 @@ const StoryCard = ({url, name, photoSrc, intro}) => (
   </a>
 )
 
+const StoryNav = ({stories}) => (
+  <nav className='dn db-l w-100 center mw8 tc'>
+    {stories.map((s) => {
+      const { meta, name, intro, photoSrc } = s
+      return (
+        <div key={name} className='db dib-ns w-50-m w-25-l ph3 v-top'>
+          <StoryCard title='Survior Story' name={name} url={meta.name} intro={intro} photoSrc={photoSrc} />
+        </div>
+      )
+    })}
+  </nav>
+)
+
 const IndexPage = ({ facts, content, stories }) => (
-  <Layout facts={facts}>
+  <Layout facts={facts} content={content}>
     <div className='tl'>
       <Helmet title={content.pageTitle} />
 
@@ -36,16 +47,7 @@ const IndexPage = ({ facts, content, stories }) => (
         We never turn away a woman in need. We're on your side.
       </p>
 
-      <nav className='dn db-l w-100 center mw8 tc'>
-        {stories.map((s) => {
-          const { name, page, intro, photoSrc } = s
-          return (
-            <div key={name} className='db dib-ns w-50-m w-25-l ph3 v-top'>
-              <StoryCard title='Survior Story' name={name} url={page} intro={intro} photoSrc={photoSrc} />
-            </div>
-          )
-        })}
-      </nav>
+      <StoryNav stories={stories} />
 
       <p className='ph3 f4 f4-ns lh-copy center' style={{maxWidth: '560px'}}>
         Talking to us is <strong>free</strong> and <strong>confidential.</strong> We're a charity.
@@ -79,33 +81,20 @@ const IndexPage = ({ facts, content, stories }) => (
         <strong>If you're not sure</strong>, please take one minute to listen to another women's story.
       </p>
 
-      <nav className='db w-100 center mw8 tc pt2'>
-        {stories.map((s) => {
-          const { name, page, intro, photoSrc } = s
-          return (
-            <div key={name} className='db dib-ns w-50-m w-25-l ph3 v-top'>
-              <StoryCard title='Survior Story' name={name} url={page} intro={intro} photoSrc={photoSrc} />
-            </div>
-          )
-        })}
-      </nav>
+      <div className='pt2'>
+        <StoryNav stories={stories} />
+      </div>
 
       <Footer />
     </div>
   </Layout>
 )
 
-const IndexPageContainer = ({pages, facts}) => {
-  const content = pages.home
+const IndexPageContainer = ({pages, ...props}) => {
   const stories = Object.keys(pages)
     .filter(key => key.match(/story/))
     .map(key => pages[key].content)
-  const props = {
-    facts,
-    content,
-    stories
-  }
-  return <IndexPage {...props} />
+  return <IndexPage {...props} stories={stories} />
 }
 
 export default IndexPageContainer
