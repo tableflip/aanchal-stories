@@ -31,11 +31,9 @@ requireDirectory(module, '../pages', {
     const html = renderToStaticMarkup(createElement(Component, props))
     const subdir = name === 'home' ? '.' : name
     const outFile = path.join(outputDir, subdir, 'index.html')
-    mkdirp(path.dirname(outFile), (err, res) => {
-      if (err) throw err
-      fs.writeFileSync(outFile, html)
-      console.timeEnd(`Build ${name}`)
-    })
+    mkdirp.sync(path.dirname(outFile))
+    fs.writeFileSync(outFile, html)
+    console.timeEnd(`Build ${name}`)
   }
 })
 

@@ -5,7 +5,7 @@ const Footer = () => (
   <footer className='db mt6 pv3 tc bg-yellow'>
     <span className=''>
       <span className='mr4'>Call us any time</span>
-      <img style={{verticalAlign: '-2px'}} src='https://icon.now.sh/phone' />
+      <img style={{width: 42, height: 42, verticalAlign: '-2px'}} src='https://icon.now.sh/phone' />
       <span> 0845 451 2547 </span>
     </span>
   </footer>
@@ -52,11 +52,11 @@ const IndexPage = ({ facts, content, stories }) => (
 
       <nav className='center mw7 tc'>
         <a href='tel:+8454512547' className='bn f5 fw4 link br1 ph3 pv3 mv2 mh3 dib white bg-aanchal-green pointer'>
-          <img className='v-mid mr2' src='https://icon.now.sh/call/ffffff/22' alt='' />
+          <img className='v-mid mr2' style={{width: 22, height: 22}} src='https://icon.now.sh/call/ffffff/22' alt='' />
           Speak to someone now
         </a>
         <a href='call-back' className='bn f5 fw4 link br1 ph3 pv3 mh3 mv2 dib white bg-aanchal-green pointer'>
-          <img className='v-mid mr2' src='https://icon.now.sh/ring_volume/ffffff/22' alt='' />
+          <img className='v-mid mr2' style={{width: 22, height: 22}} src='https://icon.now.sh/ring_volume/ffffff/22' alt='' />
           Request a call back later
         </a>
       </nav>
