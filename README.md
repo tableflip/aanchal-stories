@@ -1,20 +1,26 @@
-# aanchal-stories
+# Aanchal Stories
 
 Stories from Aanchal Women's Aid
 
 ## Usage
 
+Install dependencies
+
 ```sh
 npm install
 ```
 
-###### Dev
+###### Dev mode
+
+Clean, build, serve and watch
 
 ```sh
-npm run watch
+npm start
 ```
 
 ###### Production
+
+Build out static site to `dist`
 
 ```sh
 npm run build
@@ -23,7 +29,7 @@ npm run build
 ## Build process
 
 Find the facts.json and the content.json for each page.
-These become the props passed to each page, and looks like this
+These become the props passed to each page, and looks like this:
 
 ```json
 {
@@ -35,43 +41,77 @@ These become the props passed to each page, and looks like this
   "pages": {
     "call-back": {
       "content": {
+        "meta": {
+          "name": "call-back",
+          "relativePathToRoot": ".."
+        },
+        "pageTitle": "Request a Call back"
+      }
+    },
+    "call-back-ok": {
+      "content": {
+        "meta": {
+          "name": "call-back-ok",
+          "relativePathToRoot": ".."
+        },
         "pageTitle": "Request a Call back"
       }
     },
     "home": {
       "content": {
+        "meta": {
+          "name": "home",
+          "relativePathToRoot": ""
+        },
         "pageTitle": "Home - Aanchal Women's Aid"
-      }
-    },
-    "story-1": {
-      "content": {
-        "name": "Laximi",
-        "intro": "Laximi talks about calling Aanchal and what happend next",
-        "photoSrc": "http://aanchal.matsondigital.com/wp-content/uploads/2015/11/slider_image02.jpg",
-        "videoSrc": "https://www.youtube.com/embed/OOdPLr4zyNU"
       }
     }
   }
 }
 ```
+Run `npm start` and check `build/data.json` to see the full data available.
 
 Each folder in the `pages` dir with a `content.json` becomes a key in the `pages` prop.
 
 These are the props that are passed to every page, along with the key for the current page.
 
-```jsx
-const {meta, facts, pages, name} = loadData('callback')
-<CallbackPage meta={meta} facts={facts} pages={pages} name={name} />
+## Writing pages
+
+Create a new dir in `pages` with an `index.js` and a `content.json`
+
+Your `index.js` should have a default export of a React `Component`-ish object.
+
+
+```js
+import React from 'react'
+import Layout from '../layout'
+
+const AboutUsPage = ({content, facts, pages}) => (
+  <Layout content={content} facts={facts}>
+    <h1>{content.header}</h1>
+  </Layout>
+)
+
+export default AboutUsPage
 ```
----
 
-## Notes
+Your page will be passed the folloing props
 
-`styled-component` is nice, but we can't really use is as it compiles to inline styles with it's own impl of autoprefixer that only goes down to IE11 without extra work.
+- `facts` containing the project `facts.json`
+- `content` containing the local `content.json`
+- `pages` containing all the data from all pages.
 
-`ccs-modules` is ok. It's got a clunky syntax for [variables][css-modules-vars], but it's integrated into gatsby by default along with regular `autoprefixer` which can be configured via the `browserlist` in [`package.json`](./package.json)
+`pages` is provided to create indexes over other pages. For example:
 
+```js
+const IndexPageContainer = ({pages, ...props}) => {
+  const stories = Object.keys(pages)
+    .filter(key => key.match(/story/))
+    .map(key => pages[key].content)
+  return <IndexPage {...props} stories={stories} />
+}
 
+export default IndexPageContainer
+```
 
-
-[css-modules-vars]: https://github.com/css-modules/css-modules/blob/master/docs/values-variables.md
+...here the container finds all the story pages, and makes them available as the `stories` prop.
