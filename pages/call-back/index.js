@@ -1,4 +1,5 @@
 import React from 'react'
+import Markdown from 'react-markdown'
 import Layout from '../layout'
 
 const CallBackForm = () => (
@@ -23,9 +24,9 @@ const CallBackForm = () => (
 const CallBackPage = ({content, facts}) => (
   <Layout content={content} facts={facts} >
     <div className='tl pb6'>
-      <p className='ph3 f4 f4-ns lh-copy center' style={{maxWidth: '560px'}}>
-        Talking to us is <strong>free</strong> and <strong>confidential.</strong> We're a charity.
-      </p>
+      <div className='ph3 f4 f4-ns lh-copy center' style={{maxWidth: '560px'}}>
+        <Markdown source={content.intro} softBreak='br' />
+      </div>
 
       <p className='ph3 f4 f4-ns lh-copy center' style={{maxWidth: '560px'}}>
         Type in your phone number then click the button. We'll call you back.

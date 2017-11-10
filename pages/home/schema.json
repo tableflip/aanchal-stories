@@ -1,0 +1,8 @@
+{
+  "intro": {
+    "type": "textarea"
+  },
+  "quote": {
+    "type": "textarea"
+  }
+}

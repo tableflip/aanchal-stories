@@ -1,0 +1,6 @@
+{
+  "photoSrc": {
+    "type": "img",
+    "default": "http://placehold.it/444x246"
+  }
+}

@@ -1,4 +1,5 @@
 import React from 'react'
+import Markdown from 'react-markdown'
 import Layout from '../layout'
 
 const Footer = () => (
@@ -39,10 +40,9 @@ const StoryNav = ({stories}) => (
 const IndexPage = ({ facts, content, stories }) => (
   <Layout facts={facts} content={content}>
     <div className='tl'>
-      <p className='ph3 f4 f3-ns lh-copy center' style={{maxWidth: '560px'}}>
-        We <strong>support women</strong> affected by abuse.
-        We never turn away a woman in need. We're on your side.
-      </p>
+      <div className='ph3 f4 f3-ns lh-copy center' style={{maxWidth: '560px'}}>
+        <Markdown source={content.intro} softBreak='br' />
+      </div>
 
       <StoryNav stories={stories} />
 
@@ -67,10 +67,10 @@ const IndexPage = ({ facts, content, stories }) => (
 
       <div className='pa3 pt4-ns pb3-ns tc'>
         <blockquote className='tl athelas ml0 mt0 pl3 pl4-ns black-90 bl bw2 b--purple dib center'>
-          <p className='tl f5 f4-m f4-l lh-copy mt0 measure'>
-            I felt suicidal and couldn’t see a way out. By my 12th session with Aanchal I felt I could breathe. I could make decisions. I want to tell everyone <strong>there are always solutions</strong>. No one is alone. Just <strong>ask for help</strong>.
-          </p>
-          <cite className='tl f6 ttu tracked fs-normal'>―Survivor 2015</cite>
+          <div className='tl f5 f4-m f4-l lh-copy measure' style={{ marginTop: '-1rem' }}>
+            <Markdown source={content.quote} softBreak='br' />
+          </div>
+          <cite className='tl f6 ttu tracked fs-normal'>―{content.citation}</cite>
         </blockquote>
       </div>
 
