@@ -3,6 +3,7 @@ import Layout from '../layout'
 
 const CallBackForm = () => (
   <form className='pa3 black-80' method='post' action='https://post.tableflip.io/test.aanchal.org.uk'>
+    <input type='hidden' name='g-recaptcha-response' value='skip' />
     <div className='measure-narrow'>
       <label htmlFor='phone-number' className='f6 b db mb2'>Your phone number</label>
       <input required autoFocus className='input-reset ba b--black-20 pa3 mb2 db w-100 f4 courier' type='tel' id='phone-number' name='phone-number' aria-describedby='phone-number-desc' />
