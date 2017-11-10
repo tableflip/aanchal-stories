@@ -16,9 +16,12 @@ const Header = ({relativePathToRoot}) => (
 const Layout = ({ content, facts, children }) => (
   <html>
     <head>
-      <title>{facts.title}</title>
+      <meta charSet='UTF-8' />
+      <meta httpEquiv='x-ua-compatible' content='ie=edge' />
+      <meta name='viewport' content='width=device-width, initial-scale=1' />
       <meta name='description' content={facts.description} />
       <meta name='keywords' content={facts.keywords} />
+      <title>{facts.title}</title>
       <link rel='stylesheet' href={`${content.meta.relativePathToRoot}/bundle.css`} />
     </head>
     <body className='sans-serif'>
