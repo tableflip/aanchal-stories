@@ -28,7 +28,7 @@ requireDirectory(module, '../pages', {
       pages: data.pages
     }
     const Component = require(filePath).default
-    const html = renderToStaticMarkup(createElement(Component, props))
+    const html = `<!doctype html>${renderToStaticMarkup(createElement(Component, props))}`
     const subdir = name === 'home' ? '.' : name
     const outFile = path.join(outputDir, subdir, 'index.html')
     mkdirp.sync(path.dirname(outFile))
