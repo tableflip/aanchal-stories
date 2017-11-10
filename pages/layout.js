@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Helmet } from 'react-helmet'
 import HelplineBox from '../components/helpline-box'
 
 const Header = ({relativePathToRoot}) => (
@@ -14,8 +15,8 @@ const Header = ({relativePathToRoot}) => (
 )
 
 const Layout = ({ content, facts, children }) => (
-  <html>
-    <head>
+  <div className='sans-serif'>
+    <Helmet>
       <meta charSet='UTF-8' />
       <meta httpEquiv='x-ua-compatible' content='ie=edge' />
       <meta name='viewport' content='width=device-width, initial-scale=1' />
@@ -23,12 +24,10 @@ const Layout = ({ content, facts, children }) => (
       <meta name='keywords' content={facts.keywords} />
       <title>{facts.title}</title>
       <link rel='stylesheet' href={`${content.meta.relativePathToRoot}/bundle.css`} />
-    </head>
-    <body className='sans-serif'>
-      <Header relativePathToRoot={content.meta.relativePathToRoot} />
-      {children}
-    </body>
-  </html>
+    </Helmet>
+    <Header relativePathToRoot={content.meta.relativePathToRoot} />
+    {children}
+  </div>
 )
 
 Layout.propTypes = {
