@@ -3,16 +3,7 @@ import Markdown from 'react-markdown'
 import Layout from '../layout'
 import StoryNav from '../../components/story-nav'
 import ActionsNav from '../../components/actions-nav'
-
-const Footer = () => (
-  <footer className='db mt6 pv3 tc bg-yellow'>
-    <span className=''>
-      <span className='mr4'>Call us any time</span>
-      <img style={{width: 18, height: 18, verticalAlign: '-2px'}} src='https://icon.now.sh/phone' />
-      <span> 0845 451 2547 </span>
-    </span>
-  </footer>
-)
+import Footer from '../../components/footer'
 
 const IndexPage = ({ facts, content, pages }) => (
   <Layout facts={facts} content={content}>

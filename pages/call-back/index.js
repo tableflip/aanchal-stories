@@ -1,6 +1,7 @@
 import React from 'react'
 import Markdown from 'react-markdown'
 import Layout from '../layout'
+import Icon from '../../components/icon'
 
 const CallBackForm = () => (
   <form className='pa3 black-80' method='post' action='https://post.tableflip.io/test.aanchal.org.uk'>
@@ -13,7 +14,7 @@ const CallBackForm = () => (
       </small>
       <div className='mt4'>
         <button to='call-back' className='bn f5 fw4 link br1 ph3 pv3 dib white bg-aanchal-green pointer'>
-          <img className='v-mid mr2' src='https://icon.now.sh/ring_volume/ffffff/22' alt='' />
+          <Icon className='v-mid mr2' name='ring_volume' color='ffffff' size='22' />
           Request a call back
         </button>
       </div>
