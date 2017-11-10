@@ -14,7 +14,7 @@ export default ({ content, facts, pages }) => (
         <div className='db dtc-l w-third-l pl3-l v-top '>
           <h1 className='f3 lh-copy fw6 measure center ph1 mt2'>{content.name}</h1>
           <p className='f4 lh-copy fw4 measure center ph1'>{content.intro}</p>
-          <ActionsNav className='pt3' content={content} />
+          <ActionsNav className='pt3 tc' content={content} />
         </div>
       </div>
     </div>
