@@ -40,6 +40,8 @@
     "clean": "rm -rf dist"
   },
   "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "nodemon": "^1.12.1",
     "standard": "^10.0.3"
   },
   "browserslist": [
