@@ -16,7 +16,7 @@ const Header = ({relativePathToRoot}) => (
 const Layout = ({ content, facts, children }) => (
   <html>
     <head>
-      <title>Yo!</title>
+      <title>{facts.title}</title>
       <meta name='description' content={facts.description} />
       <meta name='keywords' content={facts.keywords} />
       <link rel='stylesheet' href={`${content.meta.relativePathToRoot}/bundle.css`} />
