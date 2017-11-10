@@ -61,7 +61,7 @@ These become the props passed to each page, and looks like this:
       "content": {
         "meta": {
           "name": "home",
-          "relativePathToRoot": ""
+          "relativePathToRoot": "."
         },
         "pageTitle": "Home - Aanchal Women's Aid"
       }

@@ -16,10 +16,10 @@ module.exports = function assembleData () {
       // name: story-4
       const name = path.basename(pageDir)
       // relativePath: '..'
-      const relativePath = path.relative(pageDir, rootPath)
+      const relativePath = path.relative(pageDir, rootPath) || '.'
       const meta = {
         name,
-        relativePathToRoot: name === 'home' ? '' : relativePath
+        relativePathToRoot: name === 'home' ? '.' : relativePath
       }
       return {
         meta,
