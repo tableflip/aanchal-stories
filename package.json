@@ -20,6 +20,7 @@
     "postcss-import": "^11.0.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-markdown": "^2.5.0",
     "react-responsive-embed": "^2.1.0",
     "require-directory": "^2.1.1",
     "tachyons": "^4.9.0"
