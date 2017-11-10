@@ -95,7 +95,7 @@ const AboutUsPage = ({content, facts, pages}) => (
 export default AboutUsPage
 ```
 
-Your page will be passed the folloing props
+Your page will be passed the following props
 
 - `facts` containing the project `facts.json`
 - `content` containing the local `content.json`
