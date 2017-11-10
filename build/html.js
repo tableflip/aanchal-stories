@@ -6,6 +6,7 @@ const mkdirp = require('mkdirp')
 const { createElement } = require('react')
 const { renderToStaticMarkup } = require('react-dom/server')
 const requireDirectory = require('require-directory')
+const { Helmet } = require('react-helmet')
 
 console.time('Build html total')
 
@@ -28,12 +29,27 @@ requireDirectory(module, '../pages', {
       pages: data.pages
     }
     const Component = require(filePath).default
-    const html = `<!doctype html>
-    ${renderToStaticMarkup(createElement(Component, props))}`
+
+    const appHtml = renderToStaticMarkup(createElement(Component, props))
+    const helmet = Helmet.renderStatic()
+    const docHtml = `<!doctype html>
+<html ${helmet.htmlAttributes.toString()}>
+  <head>
+    ${helmet.title.toString()}
+    ${helmet.meta.toString()}
+    ${helmet.link.toString()}
+  </head>
+  <body ${helmet.bodyAttributes.toString()}>
+    <div id="react-root">
+      ${appHtml}
+    </div>
+  </body>
+</html>`
+
     const subdir = name === 'home' ? '.' : name
     const outFile = path.join(outputDir, subdir, 'index.html')
     mkdirp.sync(path.dirname(outFile))
-    fs.writeFileSync(outFile, html)
+    fs.writeFileSync(outFile, docHtml)
     console.timeEnd(`Build ${name}`)
   }
 })
