@@ -36,7 +36,7 @@
     "watch:static": "nodemon -w public -e 'gif,png,webm,jpg' -x npm run build:static",
     "watch:html": "nodemon -w facts.json -w pages -e js,json,svg -x npm run build:html",
     "watch:css": "npm run build:css -- --watch",
-    "watch:serve": "browser-sync start --files 'dist/bundle.*' --files 'dist/*.html' --server dist --port 4000",
+    "watch:serve": "browser-sync start --files 'dist/bundle.*' --files 'dist/*.html' --server dist --port 4000 --reload-delay 600",
     "clean": "rm -rf dist"
   },
   "devDependencies": {
