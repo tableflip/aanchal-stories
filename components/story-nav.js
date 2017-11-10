@@ -1,11 +1,12 @@
 import React from 'react'
+import UploadcareUrl from 'uploadcare-cdn'
 
 export const StoryCard = ({url, name, photoSrc, intro}) => (
   <a href={url} className='dib tl no-underline bg-white center mw6 ba b--black-10 mv3' title={`Listen to ${name}`}>
     <div className='pv2 ph3'>
       <h1 className='f6 ttu tracked'>{name}</h1>
     </div>
-    <img src={photoSrc} className='w-100 db' alt={`Photo of ${name}`} />
+    <img src={UploadcareUrl(photoSrc).scaleCrop('444x246', 'center').quality('lighter')} className='w-100 db' alt={`Photo of ${name}`} />
     <div className='pa3'>
       <span className='link dim lh-title black'>{intro}</span>
     </div>

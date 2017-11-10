@@ -23,7 +23,8 @@
     "react-markdown": "^2.5.0",
     "react-responsive-embed": "^2.1.0",
     "require-directory": "^2.1.1",
-    "tachyons": "^4.9.0"
+    "tachyons": "^4.9.0",
+    "uploadcare-cdn": "^2.0.0"
   },
   "main": "n/a",
   "scripts": {
