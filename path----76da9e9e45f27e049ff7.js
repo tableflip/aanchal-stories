@@ -1,2 +1,0 @@
-webpackJsonp([60335399758886],{98:function(o,t){o.exports={data:{facts:{title:"Aanchal Women's Aid",description:"Stories from Aanchal Women's Aid",keywords:""}},layoutContext:{}}}});
-//# sourceMappingURL=path----76da9e9e45f27e049ff7.js.map

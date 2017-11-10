@@ -1,2 +1,0 @@
-webpackJsonp([53964639225203],{315:function(t,e){t.exports={data:{story:{name:"Laximi",videoSrc:"https://www.youtube.com/embed/OOdPLr4zyNU"}},pathContext:{page:"story-1",_PARENT:"SOURCE"}}}});
-//# sourceMappingURL=path---story-1-24ef83452d3b66e90ff5.js.map
