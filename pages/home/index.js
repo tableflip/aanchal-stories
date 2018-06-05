@@ -12,7 +12,7 @@ const IndexPage = ({ facts, content, pages }) => (
         <Markdown source={content.intro} softBreak='br' />
       </div>
 
-      <StoryNav className='dn db-l w-100' pages={pages} content={content} />
+      <StoryNav className='dn db-l w-100' pages={pages} content={content} count={3} />
 
       <p className='ph3 f4 f4-ns lh-copy center' style={{maxWidth: '560px'}}>
         Talking to us is <strong>free</strong> and <strong>confidential.</strong> We're a charity.
@@ -25,8 +25,8 @@ const IndexPage = ({ facts, content, pages }) => (
       </p>
 
       <div className='pa3 pt4-ns pb3-ns tc'>
-        <blockquote className='tl athelas ml0 mt0 pl3 pl4-ns black-90 bl bw2 b--purple dib center'>
-          <div className='tl f5 f4-m f4-l lh-copy measure' style={{ marginTop: '-1rem' }}>
+        <blockquote className='tl athelas ml0 mt0 pl3 pl3-ns black-90 bl bw2 b--purple dib center'>
+          <div className='tl f4 lh-copy measure' style={{ marginTop: '-1rem' }}>
             <Markdown source={content.quote} softBreak='br' />
           </div>
           <cite className='tl f6 ttu tracked fs-normal'>―{content.citation}</cite>
@@ -38,7 +38,7 @@ const IndexPage = ({ facts, content, pages }) => (
       </p>
 
       <div className='pt2'>
-        <StoryNav pages={pages} content={content} />
+        <StoryNav pages={pages} content={content} count={3} />
       </div>
 
       <Footer />

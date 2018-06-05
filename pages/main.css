@@ -13,3 +13,10 @@ body {
 .b-aanchal-green {
   border-color: #17A555;
 }
+
+.aanchal-green-light {
+   color: #AAD386;
+}
+.bg-aanchal-green-light {
+   background-color: #AAD386;
+}
