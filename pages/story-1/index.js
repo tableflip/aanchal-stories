@@ -20,9 +20,9 @@ export default ({ content, facts, pages }) => (
         </div>
       </div>
     </div>
-    <section className='bg-white-80 mt4 pv5'>
+    <section className='mt4 pv4'>
       <div className='mw8 center ph2 pb3'>
-        <StoryNav pages={pages} content={content} />
+        <StoryNav pages={pages} content={content} count={3} />
       </div>
     </section>
     <Footer />

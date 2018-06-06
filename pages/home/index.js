@@ -11,18 +11,21 @@ const IndexPage = ({ facts, content, pages }) => (
       <div className='ph3 f4 f3-ns lh-copy center' style={{maxWidth: '560px'}}>
         <Markdown source={content.intro} softBreak='br' />
       </div>
+      <div className='ph3 f5 f4-ns lh-copy center' style={{maxWidth: '560px'}}>
+        <Markdown source={content.intro2} softBreak='br' />
+      </div>
 
       <StoryNav className='dn db-l w-100' pages={pages} content={content} count={3} />
 
-      <p className='ph3 f4 f4-ns lh-copy center' style={{maxWidth: '560px'}}>
-        Talking to us is <strong>free</strong> and <strong>confidential.</strong> We're a charity.
-      </p>
+      <div className='ph3 f5 f4-ns lh-copy center' style={{maxWidth: '560px'}}>
+        <Markdown source={content.intro3} softBreak='br' />
+      </div>
 
       <ActionsNav className='center mw7 tc' content={content} />
 
-      <p className='ph3 f5 f4-ns lh-copy center' style={{maxWidth: '560px'}}>
-        We speak Urdu, Bengali, Punjabi, English and many other languages. If you want <strong>non-judgemental</strong> help, in your language, <strong>call us</strong>.
-      </p>
+      <div className='ph3 pt2 f5 lh-copy center' style={{maxWidth: '560px'}}>
+        <Markdown source={content.intro4} softBreak='br' />
+      </div>
 
       <div className='pa3 pt4-ns pb3-ns tc'>
         <blockquote className='tl athelas ml0 mt0 pl3 pl3-ns black-90 bl bw2 b--purple dib center'>
