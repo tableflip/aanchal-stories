@@ -3,7 +3,6 @@ import ResponsiveEmbed from 'react-responsive-embed'
 import Layout from '../layout'
 import StoryNav from '../../components/story-nav'
 import ActionsNav from '../../components/actions-nav'
-import Footer from '../../components/footer'
 
 export default ({ content, facts, pages }) => (
   <Layout content={content} facts={facts}>
@@ -25,6 +24,5 @@ export default ({ content, facts, pages }) => (
         <StoryNav pages={pages} content={content} count={3} />
       </div>
     </section>
-    <Footer />
   </Layout>
 )
