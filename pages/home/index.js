@@ -23,7 +23,7 @@ const IndexPage = ({ facts, content, pages }) => (
 
       <ActionsNav className='center mw7 tc' content={content} />
 
-      <div className='ph3 pt2 f5 lh-copy center' style={{maxWidth: '560px'}}>
+      <div className='ph3 pt2 f5 f4-ns lh-copy center' style={{maxWidth: '560px'}}>
         <Markdown source={content.intro4} softBreak='br' />
       </div>
 

@@ -24,14 +24,7 @@ const Layout = ({ content, facts, children }) => (
       <title>{facts.title}</title>
       <link rel='stylesheet' href={`${content.meta.relativePathToRoot}/bundle.css`} />
       <script async src='https://www.googletagmanager.com/gtag/js?id=UA-52178211-4' />
-      <script>
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'UA-52178211-4');
-        `}
-      </script>
+      <script src={`${content.meta.relativePathToRoot}/analytics.js`} />
     </head>
     <body className='sans-serif'>
       <Header relativePathToRoot={content.meta.relativePathToRoot} />

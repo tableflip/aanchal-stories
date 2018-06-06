@@ -1,5 +1,11 @@
 {
   "intro": {
     "type": "textarea"
+  },
+  "instruction": {
+    "type": "textarea"
+  },
+  "details": {
+    "type": "textarea"
   }
 }
