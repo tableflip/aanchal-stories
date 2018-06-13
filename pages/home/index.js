@@ -41,7 +41,7 @@ const IndexPage = ({ facts, content, pages }) => (
       </p>
 
       <div className='pt2'>
-        <StoryNav pages={pages} content={content} count={3} />
+        <StoryNav pages={pages} content={content} count={3} start={3} />
       </div>
 
       <Footer />

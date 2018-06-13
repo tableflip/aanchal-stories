@@ -29,7 +29,7 @@ export const StoriesContainerHOC = (Component) => ({pages, content, start = 0, c
   const {relativePathToRoot} = content.meta
   const stories = Object.keys(pages)
     .filter(key => key.match(/story/))
-    .slice(start, count)
+    .slice(start, start + count)
     .map(key => pages[key].content)
   return <Component {...props} stories={stories} relativePathToRoot={relativePathToRoot} />
 }

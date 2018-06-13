@@ -8,7 +8,7 @@ const ActionsNav = ({content, className}) => (
       style={{minWidth: 248}}
       className='tc bn f5 fw4 link br1 ph3 pv3 mh3 mv2 dib white bg-aanchal-green'
       title='Send us your telephone number'>
-      <Icon name='ring_volume' className='v-mid mr2' color='ffffff' size='22' />
+      <Icon src='/svg/ring_volume_22.svg' className='v-mid mr2' color='ffffff' size='22' />
       Request a call back
     </a>
     {/* mobile */}
@@ -17,7 +17,7 @@ const ActionsNav = ({content, className}) => (
       style={{minWidth: 248}}
       className='tc bn f5 fw4 link br1 ph3 pv3 mv2 mh3 dib dn-ns white bg-purple pointer'
       title='Open phone app'>
-      <Icon name='call' className='v-mid mr2' color='ffffff' size='22' />
+      <Icon src='/svg/call_22.svg' className='v-mid mr2' color='ffffff' size='22' />
       Speak to someone now
     </a>
     {/* desktop */}

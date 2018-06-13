@@ -1,6 +1,15 @@
 {
+  "name": {
+    "type": "text"
+  },
+  "intro": {
+    "type": "textarea"
+  },
   "photoSrc": {
     "type": "img",
     "default": "http://placehold.it/444x246"
+  },
+  "videoSrc": {
+    "type": "url"
   }
 }

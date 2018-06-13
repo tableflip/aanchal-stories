@@ -29,6 +29,12 @@ const Layout = ({ content, facts, children }) => (
     <body className='sans-serif'>
       <Header relativePathToRoot={content.meta.relativePathToRoot} />
       {children}
+      <a
+        title='Click here to go to Google'
+        href='https://google.co.uk'
+        className='dn dib-ns link fixed ba b-white br1 ph3 pv2 f6 fw6 white bg-purple grow' style={{top: 10, right: 10}}>
+        HIDE
+      </a>
     </body>
   </html>
 )
