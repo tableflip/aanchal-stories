@@ -23,7 +23,7 @@ const Layout = ({ content, facts, children }) => (
       <meta name='keywords' content={facts.keywords} />
       <title>{facts.title}</title>
       <link rel='stylesheet' href={`${content.meta.relativePathToRoot}/bundle.css`} />
-      <script async src='https://www.googletagmanager.com/gtag/js?id=UA-52178211-4' />
+      <script async src='https://www.googletagmanager.com/gtag/js?id=UA-123396830-1' />
       <script src={`${content.meta.relativePathToRoot}/analytics.js`} />
     </head>
     <body className='sans-serif'>
